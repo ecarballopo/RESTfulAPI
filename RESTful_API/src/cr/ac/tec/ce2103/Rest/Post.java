@@ -17,6 +17,7 @@ import cr.ac.tec.ce2103.Estructuras.Lista.Simple;
 @Path("/POST")
 public class Post {
 	
+	@SuppressWarnings("rawtypes")
 	GenLista p = new Simple();
 	
 	@GET
@@ -25,6 +26,7 @@ public class Post {
 		return "<p>Entro POST</p>";
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Path("/Insertar/{param}")
 	@GET
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -44,6 +46,7 @@ public class Post {
 		return "<p>"+ "Entradas Oleada " + name + "</p>" + profession +"</p>";
    }
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@POST
 	@Path("/P")
 	public void addPersona(@FormParam("nombre") String nombre) {

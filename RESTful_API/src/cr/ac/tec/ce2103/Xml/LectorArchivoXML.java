@@ -12,7 +12,6 @@ import cr.ac.tec.ce2103.Estructuras.Estructura.GenLista;
 import cr.ac.tec.ce2103.Estructuras.Lista.Simple;
 
 import javax.swing.JOptionPane;
-import java.awt.Graphics;
 
 
 public class LectorArchivoXML {
@@ -20,7 +19,8 @@ public class LectorArchivoXML {
     private int count = 0;
     GenLista <String[]> ListaOleada = new Simple<>();
     
-    public GenLista<String[]> ReadXML(int oleadaI, int oleadaF){
+    @SuppressWarnings({ "unused", "rawtypes" })
+	public GenLista<String[]> ReadXML(int oleadaI, int oleadaF){
         
     	while(count <= oleadaF){
     		

@@ -3,8 +3,9 @@ package cr.ac.tec.ce2103.Xml;
 import cr.ac.tec.ce2103.Estructuras.Estructura.GenLista;
 import cr.ac.tec.ce2103.Estructuras.Lista.Simple;
 
-public class main {
+public class Main {
 	
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
 		GenLista <String []> Lista = new Simple<>();

@@ -9,7 +9,8 @@ import cr.ac.tec.ce2103.Estructuras.Lista.Simple;
 
 public class Json {
 	
-	GenLista p = new Simple();
+	@SuppressWarnings("rawtypes")
+	GenLista p = new Simple<>();
 	
 	 public void Lector(String MensajeEn){
 		 System.out.println("Mensaje entrando "+ MensajeEn);
@@ -30,7 +31,8 @@ public class Json {
 		        
 	 }
 	    
-	 private void Accion (String Accion, JSONObject json){
+	 @SuppressWarnings("unchecked")
+	private void Accion (String Accion, JSONObject json){
 	     System.out.println("Json recibido");
 	 
 	 if (Accion.equals("Agregar")){
