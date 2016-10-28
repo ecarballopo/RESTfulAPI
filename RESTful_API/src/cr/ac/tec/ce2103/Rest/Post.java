@@ -31,8 +31,8 @@ public class Post {
 	@GET
 	@Consumes(MediaType.APPLICATION_JSON)
 	public String datoOleada(@PathParam("param") String nuevo){
-		p.Insertar(nuevo, 0);
-		p.Imprimir();
+//		p.Insertar(nuevo, 0);
+//		p.Imprimir();
 		return "<p>"+ "Entradas Oleada " + nuevo + "</p>";
 	}
 	
@@ -50,8 +50,8 @@ public class Post {
 	@POST
 	@Path("/P")
 	public void addPersona(@FormParam("nombre") String nombre) {
-		GenLista p = new Simple();
-		p.Insertar(nombre, 0);
+//		GenLista p = new Simple();
+//		p.Insertar(nombre, 0);
 	}
 	
 }

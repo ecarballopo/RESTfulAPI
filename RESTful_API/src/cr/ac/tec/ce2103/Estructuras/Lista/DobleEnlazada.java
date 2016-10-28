@@ -32,7 +32,7 @@ public class DobleEnlazada<T> implements GenLista<T> {
 			GenNodo<T> tmp = _raiz;
 			for(int i=1; pos <= tamaño() && i < pos;i++){
 				tmp = tmp.get_Siguiente();
-			}return (T) tmp.get_Dato();
+			}return tmp.get_Atrib();
 		}
 		return null;
 	}
@@ -41,9 +41,9 @@ public class DobleEnlazada<T> implements GenLista<T> {
 	 * Metodo que inserta segun posicion dada
 	 */
 	@Override
-	public void Insertar(T pDato,int pos) {
+	public void Insertar(String pDato,T Atrib,int pos) {
 		if (pos <= tamaño())    {
-            GenNodo<T> nuevo = new GenNodo<T>(pDato);
+            GenNodo<T> nuevo = new GenNodo<T>(pDato,Atrib);
             if (pos == 0){
                 nuevo.set_Siguiente(_raiz);
                 if (_raiz != null)
@@ -101,9 +101,9 @@ public class DobleEnlazada<T> implements GenLista<T> {
 	public T Buscar(T pDato) {
 		  GenNodo<T> tmp = _raiz;
 	        while (tmp != null) {
-	            if (tmp.get_Dato() == pDato){
-	            	System.out.println("Encontrado: "+tmp.get_Dato());
-	                return tmp.get_Dato();
+	            if (tmp.get_Criatura() == pDato){
+	            	System.out.println("Encontrado: "+tmp.get_Criatura());
+	                return (T) tmp.get_Criatura();
 	            }
 	            tmp = tmp.get_Siguiente();
 	        }
@@ -115,7 +115,7 @@ public class DobleEnlazada<T> implements GenLista<T> {
 		GenNodo<T> tmp = _raiz;
 		String L = "";
 		while (tmp != null){
-			L += tmp.get_Dato();
+			L += tmp.get_Criatura();
 			tmp = tmp.get_Siguiente();
 		}
 		System.out.println(L);

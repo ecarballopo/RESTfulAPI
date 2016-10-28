@@ -41,28 +41,32 @@ public class EscritorArchivoXML {
                     String[] arregloDatos = (String[]) (lista.Retornar(0));
                     
                     Element nodo0 = doc.createElement("TipoEnemigo");
-                    nodo0.appendChild(doc.createTextNode(arregloDatos[0]));
+                    nodo0.appendChild(doc.createTextNode(lista.RetornarNodo(0).get_Criatura()));
                     datos.appendChild(nodo0);
                     
-                    Element nodo1 = doc.createElement("Vida");
-                    nodo1.appendChild(doc.createTextNode(arregloDatos[1]));
+                    Element nodo1 = doc.createElement("ID");
+                    nodo1.appendChild(doc.createTextNode(arregloDatos[0]));
                     datos.appendChild(nodo1);
                     
-                    Element nodo2 = doc.createElement("Velocidad");
-                    nodo2.appendChild(doc.createTextNode(arregloDatos[2]));
+                    Element nodo2 = doc.createElement("Vida");
+                    nodo2.appendChild(doc.createTextNode(arregloDatos[1]));
                     datos.appendChild(nodo2);
                     
-                    Element nodo3 = doc.createElement("ResF");
-                    nodo3.appendChild(doc.createTextNode(arregloDatos[3]));
+                    Element nodo3 = doc.createElement("Velocidad");
+                    nodo3.appendChild(doc.createTextNode(arregloDatos[2]));
                     datos.appendChild(nodo3);
                     
-                    Element nodo4 = doc.createElement("ResM");
-                    nodo4.appendChild(doc.createTextNode(arregloDatos[4]));
+                    Element nodo4 = doc.createElement("ResF");
+                    nodo4.appendChild(doc.createTextNode(arregloDatos[3]));
                     datos.appendChild(nodo4);
                     
-                    Element nodo5 = doc.createElement("ResA");
-                    nodo5.appendChild(doc.createTextNode(arregloDatos[5]));
+                    Element nodo5 = doc.createElement("ResM");
+                    nodo5.appendChild(doc.createTextNode(arregloDatos[4]));
                     datos.appendChild(nodo5);
+                    
+                    Element nodo6 = doc.createElement("ResA");
+                    nodo6.appendChild(doc.createTextNode(arregloDatos[5]));
+                    datos.appendChild(nodo6);
                     
                     lista.Borrar(0);    
             }   

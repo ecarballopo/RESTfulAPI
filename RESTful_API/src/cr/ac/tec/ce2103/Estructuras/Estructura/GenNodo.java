@@ -2,32 +2,32 @@ package cr.ac.tec.ce2103.Estructuras.Estructura;
 
 public class GenNodo<T> {
 
-	private T _Dato;
-	private boolean _Free;
+	private String _Criatura;
+	public String get_Criatura() {
+		return _Criatura;
+	}
+
+	public void set_Criatura(String _Criatura) {
+		this._Criatura = _Criatura;
+	}
+
+	private T _Atrib;
 	private GenNodo<T> _Siguiente;
 	private GenNodo<T> _Anterior;
 	
-	public GenNodo(T pDato){
-		this._Dato = pDato;
-		this._Free = false;
+	public GenNodo(String pDato,T Atrib){
+		this._Criatura = pDato;
+		this._Atrib = Atrib;
 		this._Siguiente = null;
 		this._Anterior = null;
 	}
 
-	public boolean is_Free() {
-		return _Free;
+	public T get_Atrib() {
+		return _Atrib;
 	}
 
-	public void set_Free(boolean _Free) {
-		this._Free = _Free;
-	}
-
-	public T get_Dato() {
-		return _Dato;
-	}
-
-	public void set_Dato(T _Dato) {
-		this._Dato = _Dato;
+	public void set_Atrib(T _Atrib) {
+		this._Atrib = _Atrib;
 	}
 
 	public GenNodo<T> get_Siguiente() {

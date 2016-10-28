@@ -1,7 +1,9 @@
-package cr.ac.tec.ce2103.Xml;
+package cr.ac.tec.ce2103.Estructuras.Main;
 
 import cr.ac.tec.ce2103.Estructuras.Estructura.GenLista;
 import cr.ac.tec.ce2103.Estructuras.Lista.Simple;
+import cr.ac.tec.ce2103.Xml.EscritorArchivoXML;
+import cr.ac.tec.ce2103.Xml.LectorArchivoXML;
 
 public class Main {
 	
@@ -18,12 +20,12 @@ public class Main {
 		String[] Enemigo4 = {"Artillero","14","4","6","8","10"};
 		String[] Enemigo5 = {"Arpia","14","4","6","8","10"};
 		String[] Enemigo6 = {"Elfo","14","4","6","8","10"};
-		Lista.Insertar(Enemigo1, 0);
-		Lista.Insertar(Enemigo2, 0);
-		Lista.Insertar(Enemigo3, 0);
-		Lista.Insertar(Enemigo4, 0);
-		Lista.Insertar(Enemigo5, 0);
-		Lista.Insertar(Enemigo6, 0);
+		Lista.Insertar("Ogro",Enemigo1, 0);
+		Lista.Insertar("Elfo",Enemigo2, 0);
+		Lista.Insertar("Arpia",Enemigo3, 0);
+		Lista.Insertar("Artillero",Enemigo4, 0);
+		Lista.Insertar("Arpia",Enemigo5, 0);
+		Lista.Insertar("Elfo",Enemigo6, 0);
 		XML.WriteXML(Lista);
 		
 		GenLista <String []> Lista2 = new Simple<>();
@@ -33,12 +35,12 @@ public class Main {
 		String[] Enemigo10 = {"Artillero","14","4","6","8","10"};
 		String[] Enemigo11 = {"Arpia","14","4","6","8","10"};
 		String[] Enemigo12 = {"Elfo","14","4","6","8","10"};
-		Lista2.Insertar(Enemigo7, 0);
-		Lista2.Insertar(Enemigo8, 0);
-		Lista2.Insertar(Enemigo9, 0);
-		Lista2.Insertar(Enemigo10, 0);
-		Lista2.Insertar(Enemigo11, 0);
-		Lista2.Insertar(Enemigo12, 0);
+		Lista2.Insertar("Ogro",Enemigo7, 0);
+		Lista2.Insertar("Elfo",Enemigo8, 0);
+		Lista2.Insertar("Arpia",Enemigo9, 0);
+		Lista2.Insertar("Artillero",Enemigo10, 0);
+		Lista2.Insertar("Arpia",Enemigo11, 0);
+		Lista2.Insertar("Elfo",Enemigo12, 0);
 		XML.WriteXML(Lista2);
 		
 		

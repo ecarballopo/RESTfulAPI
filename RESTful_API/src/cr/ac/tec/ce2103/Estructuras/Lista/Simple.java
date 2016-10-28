@@ -20,9 +20,9 @@ public class Simple<T> implements GenLista<T> {
 	 */
 	
 
-	public void Insertar(T pDato, int pos) {
+	public void Insertar(String pDato,T Atrib, int pos) {
 		if (pos <= tamaño() + 1)    {
-            GenNodo<T> nuevo = new GenNodo<>(pDato);
+            GenNodo<T> nuevo = new GenNodo<>(pDato,Atrib);
             if (pos == 0){
                 nuevo.set_Siguiente(_head);
                 _head = nuevo;
@@ -84,9 +84,9 @@ public class Simple<T> implements GenLista<T> {
 	public T Buscar(T pDato) {
         GenNodo<T> tmp = _head;
         while (tmp != null){
-        	if(tmp.get_Dato() == pDato){
-        		System.out.println("Encontrado: "+tmp.get_Dato());
-        		return tmp.get_Dato();
+        	if(tmp.get_Criatura() == pDato){
+        		System.out.println("Encontrado: "+tmp.get_Criatura());
+        		return (T) tmp.get_Criatura();
         	}
         	else
         		tmp = tmp.get_Siguiente();
@@ -102,7 +102,7 @@ public class Simple<T> implements GenLista<T> {
 		GenNodo<T> tmp = _head;
 		String L = "";
 		while (tmp != null){
-			L += tmp.get_Dato();
+			L += tmp.get_Criatura();
 			tmp = tmp.get_Siguiente();
 		}
 		System.out.println(L);
@@ -114,7 +114,7 @@ public class Simple<T> implements GenLista<T> {
 			GenNodo<T> tmp = _head;
 			for(int i=0; pos <= tamaño() && i < pos;i++){
 				tmp = tmp.get_Siguiente();
-			}return (T) tmp.get_Dato();
+			}return tmp.get_Atrib();
 		}
 		return null;
 	}

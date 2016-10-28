@@ -2,7 +2,7 @@ package cr.ac.tec.ce2103.Estructuras.Estructura;
 
 public interface GenLista<T> {
 	
-	public void Insertar(T pDato, int pos);
+	public void Insertar(String pDato,T Atrib, int pos);
 	public int tamaño();
 	public T Retornar(int pos);
 	public GenNodo<T> RetornarNodo(int pos);

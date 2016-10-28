@@ -36,7 +36,7 @@ public class Json {
 	     System.out.println("Json recibido");
 	 
 	 if (Accion.equals("Agregar")){
-		 p.Insertar("1", 0);
+//		 p.Insertar("1", 0);
 	 }
 	 
 	 else{

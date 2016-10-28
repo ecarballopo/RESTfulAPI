@@ -55,7 +55,7 @@ public class LectorArchivoXML {
     						DatoOleada[3]= ResF;
     						DatoOleada[4]= ResM;
     						DatoOleada[5]= ResA;
-    						ListaOleada.Insertar(DatoOleada,0);
+    						ListaOleada.Insertar(TipoEnemigo,DatoOleada,0);
     						/*System.out.println(DatoOleada);
     						System.out.println(DatoOleada[0]);
     						System.out.println(DatoOleada[1]);
