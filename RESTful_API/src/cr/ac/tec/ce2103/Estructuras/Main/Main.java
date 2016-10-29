@@ -10,31 +10,31 @@ public class Main {
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
-		GenLista <String []> Lista = new Simple<>();
+		GenLista <int[]> Lista = new Simple<>();
 		EscritorArchivoXML XML = new EscritorArchivoXML();
 		LectorArchivoXML lXML = new LectorArchivoXML();
 		
-		String[] Enemigo1 = {"Ogro","14","24","6","8","10"};
-		String[] Enemigo2 = {"Elfo","14","4","6","8","10"};
-		String[] Enemigo3 = {"Arpia","14","4","6","8","10"};
-		String[] Enemigo4 = {"Artillero","14","4","6","8","10"};
-		String[] Enemigo5 = {"Arpia","14","4","6","8","10"};
-		String[] Enemigo6 = {"Elfo","14","4","6","8","10"};
+		int[] Enemigo1 = {1,14,24,6,8,10};
+		int[] Enemigo2 = {2,14,4,6,8,10};
+		int[] Enemigo3 = {3,14,4,6,8,10};
+		int[] Enemigo4 = {4,14,4,6,8,10};
+		int[] Enemigo5 = {3,14,4,6,8,10};
+		int[] Enemigo6 = {2,14,4,6,8,10};
 		Lista.Insertar("Ogro",Enemigo1, 0);
 		Lista.Insertar("Elfo",Enemigo2, 0);
 		Lista.Insertar("Arpia",Enemigo3, 0);
-		Lista.Insertar("Artillero",Enemigo4, 0);
+		Lista.Insertar("Mercenario",Enemigo4, 0);
 		Lista.Insertar("Arpia",Enemigo5, 0);
 		Lista.Insertar("Elfo",Enemigo6, 0);
 		XML.WriteXML(Lista);
 		
-		GenLista <String []> Lista2 = new Simple<>();
-		String[] Enemigo7 = {"Ogro","14","24","6","8","10"};
-		String[] Enemigo8 = {"Elfo","14","4","6","8","10"};
-		String[] Enemigo9 = {"Arpia","14","4","6","8","10"};
-		String[] Enemigo10 = {"Artillero","14","4","6","8","10"};
-		String[] Enemigo11 = {"Arpia","14","4","6","8","10"};
-		String[] Enemigo12 = {"Elfo","14","4","6","8","10"};
+		GenLista <int[]> Lista2 = new Simple<>();
+		int[] Enemigo7 = {1,14,24,6,8,10};
+		int[] Enemigo8 = {2,14,4,6,8,10};
+		int[] Enemigo9 = {3,14,4,6,8,10};
+		int[] Enemigo10 = {4,14,4,6,8,10};
+		int[] Enemigo11 = {3,14,4,6,8,10};
+		int[] Enemigo12 = {2,14,4,6,8,10};
 		Lista2.Insertar("Ogro",Enemigo7, 0);
 		Lista2.Insertar("Elfo",Enemigo8, 0);
 		Lista2.Insertar("Arpia",Enemigo9, 0);
