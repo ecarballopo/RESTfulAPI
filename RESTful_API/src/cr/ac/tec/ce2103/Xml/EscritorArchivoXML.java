@@ -44,7 +44,7 @@ public class EscritorArchivoXML {
                     nodo0.appendChild(doc.createTextNode(lista.RetornarNodo(0).get_Criatura()));
                     datos.appendChild(nodo0);
                     
-                    Element nodo1 = doc.createElement("ID");
+                    Element nodo1 = doc.createElement("TipoEnemigo_ID");
                     nodo1.appendChild(doc.createTextNode(Integer.toString(arregloDatos[0])));
                     datos.appendChild(nodo1);
                     
