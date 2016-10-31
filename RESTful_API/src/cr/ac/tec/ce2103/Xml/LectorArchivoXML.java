@@ -40,16 +40,17 @@ public class LectorArchivoXML {
     						
     						Element campo = (Element)list.get(j);
     						
-    						String TipoEnemigo= campo.getChildText("TipoEnemigo");
-    						String Vida= campo.getChildText("Vida");
-    						String Velocidad= campo.getChildText("Velocidad");
-    						String ResF= campo.getChildText("ResF");
+    						String TipoEnemigo = campo.getChildText("TipoEnemigo");
+    						String TipoEnemigo_ID = campo.getChildText("TipoEnemigo_ID");
+    						String Vida = campo.getChildText("Vida");
+    						String Velocidad = campo.getChildText("Velocidad");
+    						String ResF = campo.getChildText("ResF");
     						String ResM = campo.getChildText("ResM");
-    						String ResA= campo.getChildText("ResA");
+    						String ResA = campo.getChildText("ResA");
                         
     						
     						String[] DatoOleada = new String[6];
-    						DatoOleada[0]= TipoEnemigo;
+    						DatoOleada[0]= TipoEnemigo_ID;
     						DatoOleada[1]= Vida;
     						DatoOleada[2]= Velocidad;
     						DatoOleada[3]= ResF;

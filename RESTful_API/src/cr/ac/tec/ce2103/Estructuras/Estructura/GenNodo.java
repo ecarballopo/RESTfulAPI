@@ -3,14 +3,7 @@ package cr.ac.tec.ce2103.Estructuras.Estructura;
 public class GenNodo<T> {
 
 	private String _Criatura;
-	public String get_Criatura() {
-		return _Criatura;
-	}
-
-	public void set_Criatura(String _Criatura) {
-		this._Criatura = _Criatura;
-	}
-
+	private T _Dato;
 	private T _Atrib;
 	private GenNodo<T> _Siguiente;
 	private GenNodo<T> _Anterior;
@@ -20,6 +13,28 @@ public class GenNodo<T> {
 		this._Atrib = Atrib;
 		this._Siguiente = null;
 		this._Anterior = null;
+	}
+	
+	public GenNodo(T pDato){
+		this._Dato = pDato;
+		this._Siguiente = null;
+		this._Anterior = null;
+	}
+	
+	public T get_Dato() {
+		return _Dato;
+	}
+
+	public void set_Dato(T _Dato) {
+		this._Dato = _Dato;
+	}
+
+	public String get_Criatura() {
+		return _Criatura;
+	}
+
+	public void set_Criatura(String _Criatura) {
+		this._Criatura = _Criatura;
 	}
 
 	public T get_Atrib() {

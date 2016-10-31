@@ -56,6 +56,44 @@ public class Simple<T> implements GenLista<T> {
                 }
 		}
 	}
+	
+	@Override
+	public void Insertar(T pDato, int pos) {
+		if (pos <= tamaño() + 1)    {
+            GenNodo<T> nuevo = new GenNodo<>(pDato);
+            if (pos == 0){
+                nuevo.set_Siguiente(_head);
+                _head = nuevo;
+            }else if (pos == -1){
+            	if(tamaño() == 0){
+                    _head = nuevo;
+            	}else{
+            		GenNodo<T> tmp = _head;
+                    while (tmp.get_Siguiente()!= null) {
+                        tmp = tmp.get_Siguiente();
+                    }
+                    tmp.set_Siguiente(nuevo);
+            	}
+            }else
+                if (pos == tamaño() + 1)    {
+                    GenNodo<T> tmp = _head;
+                    while (tmp.get_Siguiente()!= null) {
+                        tmp = tmp.get_Siguiente();
+                    }
+                    tmp.set_Siguiente(nuevo);
+                  
+//                    nuevo.set_next(null);
+                }else {
+                    GenNodo<T> tmp = _head;
+                    for (int i = 0 ; i <= pos - 2 ; i++)
+                        tmp = tmp.get_Siguiente();
+                    GenNodo<T> siguiente = tmp.get_Siguiente();
+                    tmp.set_Siguiente(nuevo);
+                   
+                    nuevo.set_Siguiente(siguiente);
+                }
+		}
+	}
 	/**
 	 * Metodo que Borra al final
 	 */
@@ -102,7 +140,7 @@ public class Simple<T> implements GenLista<T> {
 		GenNodo<T> tmp = _head;
 		String L = "";
 		while (tmp != null){
-			L += tmp.get_Criatura();
+			L += " " + tmp.get_Dato();
 			tmp = tmp.get_Siguiente();
 		}
 		System.out.println(L);
@@ -139,6 +177,25 @@ public class Simple<T> implements GenLista<T> {
 			}return tmp;
 		}
 		return null;
+	}
+	
+	@Override
+	public int RetornarPos(int dato){
+		int cant = 0;
+        GenNodo<T> tmp = _head;
+        while (tmp != null) {
+        	if((int)(tmp.get_Dato()) == dato){
+        		return cant;
+        	}
+            tmp = tmp.get_Siguiente();
+            cant++;
+        }
+        return cant;
+	}
+
+	@Override
+	public void Eliminar() {
+		_head = null;
 	}
 
 }
