@@ -17,8 +17,8 @@ import cr.ac.tec.ce2103.Estructuras.Estructura.GenLista;
 public class EscritorArchivoXML {
 	public int count =0;
     
-        @SuppressWarnings("rawtypes")
-		public StreamResult WriteXML(GenLista<int[]> lista){
+		public StreamResult WriteXML(GenLista<int[]> Lista){
+			GenLista<int[]> lista = Lista;
         
         try{
             

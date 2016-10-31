@@ -3,11 +3,14 @@ package cr.ac.tec.ce2103.Estructuras.Main;
 import cr.ac.tec.ce2103.Estructuras.Estructura.GenLista;
 import cr.ac.tec.ce2103.Estructuras.Lista.Simple;
 import cr.ac.tec.ce2103.Genetico.Genetico;
+import cr.ac.tec.ce2103.Xml.EscritorArchivoXML;
 
 public class MainGenetico {
 	
 	public static void main(String[] args) {
+		
 		Genetico G = new Genetico();
+		EscritorArchivoXML XML = new EscritorArchivoXML();
 		GenLista<int[]> L = new Simple<>();
 		L = G.PrimeraGeneracion();
 		
@@ -33,7 +36,6 @@ public class MainGenetico {
 		}
 		
 		G.fitness();
-		
 		System.out.println("\n"+ "###################################################################################");
 
 		System.out.println("\n"+ "Oleada Genetica2" + " ");
@@ -48,7 +50,6 @@ public class MainGenetico {
 		}
 		
 		G.fitness();
-		
 		System.out.println("\n"+ "###################################################################################");
 
 		System.out.println("\n"+ "Oleada Genetica3" + " ");

@@ -4,13 +4,16 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import cr.ac.tec.ce2103.Estructuras.Estructura.GenLista;
 import cr.ac.tec.ce2103.Estructuras.Lista.Simple;
+import cr.ac.tec.ce2103.Xml.EscritorArchivoXML;
 
 public class Genetico {
 		
 	private GenLista<int[]> Oleada = new Simple<>();
+	private GenLista<int[]> Copia;
 	private int Inicial = 5;
 	private int Vida = 100;
 	private GenLista<Integer> fitness = new Simple<>();
+	private EscritorArchivoXML XML = new EscritorArchivoXML();
 	private double porcentajefit = 0.2;
 	private double porcentajeMut = 0.08;
 	private double porcentajeAumentoMut = 1.5;
@@ -37,6 +40,8 @@ public class Genetico {
 				Oleada.Insertar(Criatura,Enemigo, -1);
 				Inicial--;
 			}else{
+				Copia = Oleada;
+				XML.WriteXML(Copia);
 				return Oleada;
 			}
 		}
@@ -52,6 +57,8 @@ public class Genetico {
 		}else{
 			Cross();
 		}
+		Copia = Oleada;
+		XML.WriteXML(Copia);
 		return Oleada;
 	}
 	
