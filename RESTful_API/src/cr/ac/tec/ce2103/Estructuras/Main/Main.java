@@ -1,9 +1,9 @@
 package cr.ac.tec.ce2103.Estructuras.Main;
 
-import cr.ac.tec.ce2103.Estructuras.Estructura.GenLista;
-import cr.ac.tec.ce2103.Estructuras.Lista.Simple;
-import cr.ac.tec.ce2103.Xml.EscritorArchivoXML;
-import cr.ac.tec.ce2103.Xml.LectorArchivoXML;
+//import cr.ac.tec.ce2103.Estructuras.Estructura.GenLista;
+//import cr.ac.tec.ce2103.Estructuras.Lista.Simple;
+//import cr.ac.tec.ce2103.Xml.EscritorArchivoXML;
+//import cr.ac.tec.ce2103.Xml.LectorArchivoXML;
 
 public class Main {
 	

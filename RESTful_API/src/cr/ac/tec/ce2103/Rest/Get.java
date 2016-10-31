@@ -6,13 +6,13 @@ import javax.ws.rs.core.MediaType;
 import cr.ac.tec.ce2103.Estructuras.Estructura.GenLista;
 import cr.ac.tec.ce2103.Estructuras.Lista.Simple;
 import cr.ac.tec.ce2103.Genetico.Genetico;
-import cr.ac.tec.ce2103.Xml.EscritorArchivoXML;
+//import cr.ac.tec.ce2103.Xml.EscritorArchivoXML;
 
 @Path("/GET")
 public class Get {
 	
 	private Genetico G = new Genetico();
-	private EscritorArchivoXML XML = new EscritorArchivoXML();
+//	private EscritorArchivoXML XML = new EscritorArchivoXML();
 	
 	@GET
 	@Produces(MediaType.TEXT_HTML)

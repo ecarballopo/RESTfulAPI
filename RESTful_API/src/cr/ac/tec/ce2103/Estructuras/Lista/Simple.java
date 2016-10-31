@@ -43,8 +43,6 @@ public class Simple<T> implements GenLista<T> {
                         tmp = tmp.get_Siguiente();
                     }
                     tmp.set_Siguiente(nuevo);
-                  
-//                    nuevo.set_next(null);
                 }else {
                     GenNodo<T> tmp = _head;
                     for (int i = 0 ; i <= pos - 2 ; i++)
@@ -118,6 +116,7 @@ public class Simple<T> implements GenLista<T> {
 	/**
 	 * Metodo que busca un elemento
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public T Buscar(T pDato) {
         GenNodo<T> tmp = _head;

@@ -31,7 +31,7 @@ public class Json {
 		        
 	 }
 	    
-	 @SuppressWarnings("unchecked")
+
 	private void Accion (String Accion, JSONObject json){
 	     System.out.println("Json recibido");
 	 
