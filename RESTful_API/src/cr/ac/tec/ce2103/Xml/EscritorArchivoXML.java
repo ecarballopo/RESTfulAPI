@@ -70,7 +70,7 @@ public class EscritorArchivoXML {
                     nodo6.appendChild(doc.createTextNode(Integer.toString(arregloDatos[5])));
                     datos.appendChild(nodo6);
                     contador++;
-                    //lista.Borrar(0);    
+                       
             }   
             
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
