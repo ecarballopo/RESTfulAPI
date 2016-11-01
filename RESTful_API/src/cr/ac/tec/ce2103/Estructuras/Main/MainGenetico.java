@@ -3,17 +3,16 @@ package cr.ac.tec.ce2103.Estructuras.Main;
 import cr.ac.tec.ce2103.Estructuras.Estructura.GenLista;
 import cr.ac.tec.ce2103.Estructuras.Lista.Simple;
 import cr.ac.tec.ce2103.Genetico.Genetico;
-//import cr.ac.tec.ce2103.Xml.EscritorArchivoXML;
+import cr.ac.tec.ce2103.Xml.EscritorArchivoXML;
 
 public class MainGenetico {
 	
 	public static void main(String[] args) {
 		
 		Genetico G = new Genetico();
-//		EscritorArchivoXML XML = new EscritorArchivoXML();
+		EscritorArchivoXML XML = new EscritorArchivoXML();
 		GenLista<int[]> L = new Simple<>();
 		L = G.PrimeraGeneracion();
-		
 		System.out.println("\n"+ "Primera Oleada" + " ");
 		for(int i = 0; i < L.tamaño(); i++){
 			System.out.print("\nCriatura " + Integer.toString(i)+ ": " + L.RetornarNodo(i).get_Criatura() + " ");
@@ -22,6 +21,7 @@ public class MainGenetico {
 				System.out.print(a[j] + " ");
 			}
 		}
+		XML.WriteXML(L);
 		System.out.println("\n"+ "###################################################################################");
 
 		System.out.println("\n"+ "Oleada Genetica" + " ");

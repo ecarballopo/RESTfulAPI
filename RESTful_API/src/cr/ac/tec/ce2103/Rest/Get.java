@@ -6,13 +6,11 @@ import javax.ws.rs.core.MediaType;
 import cr.ac.tec.ce2103.Estructuras.Estructura.GenLista;
 import cr.ac.tec.ce2103.Estructuras.Lista.Simple;
 import cr.ac.tec.ce2103.Genetico.Genetico;
-//import cr.ac.tec.ce2103.Xml.EscritorArchivoXML;
 
 @Path("/GET")
 public class Get {
 	
 	private Genetico G = new Genetico();
-//	private EscritorArchivoXML XML = new EscritorArchivoXML();
 	
 	@GET
 	@Produces(MediaType.TEXT_HTML)
@@ -38,7 +36,7 @@ public class Get {
 					System.out.print(a[j] + " ");
 				}
 			}
-//			XML.WriteXML(L);
+
 			return "Creada";
 		}
 		else if(tipo.equalsIgnoreCase("xml")){

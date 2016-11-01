@@ -10,7 +10,7 @@ public class Genetico {
 		
 	private GenLista<int[]> Oleada = new Simple<>();
 	private GenLista<int[]> Copia;
-	private int Inicial = 5;
+	private int Inicial = 3;
 	private int Vida = 100;
 	private GenLista<Integer> fitness = new Simple<>();
 	private EscritorArchivoXML XML = new EscritorArchivoXML();
@@ -41,10 +41,11 @@ public class Genetico {
 				Inicial--;
 			}else{
 				Copia = Oleada;
-				XML.WriteXML(Copia);
+//				XML.WriteXML(Copia);
 				return Oleada;
 			}
 		}
+//		XML.WriteXML(Oleada);
 		return Oleada;
 	}
 	
@@ -58,7 +59,7 @@ public class Genetico {
 			Cross();
 		}
 		Copia = Oleada;
-		XML.WriteXML(Copia);
+//		XML.WriteXML(Copia);
 		return Oleada;
 	}
 	
