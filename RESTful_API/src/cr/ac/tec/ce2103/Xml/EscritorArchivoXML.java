@@ -15,9 +15,11 @@ import cr.ac.tec.ce2103.Estructuras.Estructura.GenLista;
 
 
 public class EscritorArchivoXML {
-	public int count =0;
+	private int count =0;
+	
     
 		public StreamResult WriteXML(GenLista<int[]> Lista){
+			int contador =0;
 			GenLista<int[]> lista = Lista;
         
         try{
@@ -33,15 +35,15 @@ public class EscritorArchivoXML {
             
             
             
-            while(lista.tamaño()!=0){
+            while(contador<lista.tamaño()){
             
                 Element datos = doc.createElement("datos");
                 rootElement.appendChild(datos);
                     
-                    int[] arregloDatos =  (int[]) (lista.RetornarNodo(0).get_Atrib());
+                    int[] arregloDatos =  (int[]) (lista.RetornarNodo(contador).get_Atrib());
                     
                     Element nodo0 = doc.createElement("TipoEnemigo");
-                    nodo0.appendChild(doc.createTextNode(lista.RetornarNodo(0).get_Criatura()));
+                    nodo0.appendChild(doc.createTextNode(lista.RetornarNodo(contador).get_Criatura()));
                     datos.appendChild(nodo0);
                     
                     Element nodo1 = doc.createElement("TipoEnemigo_ID");
@@ -67,8 +69,8 @@ public class EscritorArchivoXML {
                     Element nodo6 = doc.createElement("ResA");
                     nodo6.appendChild(doc.createTextNode(Integer.toString(arregloDatos[5])));
                     datos.appendChild(nodo6);
-                    
-                    lista.Borrar(0);    
+                    contador++;
+                    //lista.Borrar(0);    
             }   
             
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
