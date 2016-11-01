@@ -43,6 +43,7 @@ public class Get {
 			return "<Oleada>Id</Oleada>";
 		}
 		else if(tipo.equalsIgnoreCase("json")){
+			G.GetOleada();
 			return "{Oleada:Id}";
 		}
 		else{
