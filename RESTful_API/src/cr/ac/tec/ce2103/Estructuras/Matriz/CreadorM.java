@@ -27,8 +27,8 @@ public class CreadorM {
 		String A="";
 		for (int i=0; i<MatrizEnemigos.length;i++){
 				
-				A = A + "["+MatrizEnemigos[i][0]+"]"+"["+MatrizEnemigos[i][1]+"]"+"["+MatrizEnemigos[i][2]+"]"+
-						"["+MatrizEnemigos[i][3]+"]"+"["+MatrizEnemigos[i][4]+"]"+"["+MatrizEnemigos[i][5]+"]";
+				A = A + MatrizEnemigos[i][0]+","+MatrizEnemigos[i][1]+","+MatrizEnemigos[i][2]+","+
+						MatrizEnemigos[i][3]+","+MatrizEnemigos[i][4]+","+MatrizEnemigos[i][5]+"/";
 		}
 		return A;
 	}
