@@ -6,7 +6,7 @@ public class MainGenetico {
 	
 	public static void main(String[] args) {	
 		Genetico G = new Genetico();
-		G.GetOleada();
+		G.GetOleada();	
 	}
 	
 }

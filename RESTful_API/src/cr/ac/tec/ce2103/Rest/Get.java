@@ -21,26 +21,8 @@ public class Get {
 	
 	@Path("/PrimeraOleada/{type}")
 	@GET
-	@Produces({"text/plain","text/xml", 
-		"application/json"})
+	@Produces({"text/plain"})
 	public String Primera(@PathParam("type") String tipo){
-
-//		if(tipo.equalsIgnoreCase("texto")){
-//			G.PrimeraGeneracion();
-//			return "Creada";
-//
-//		}
-//		else if(tipo.equalsIgnoreCase("xml")){
-//			String[][] a = {{"a","b"}};
-//			return a;
-//		}
-//		else if(tipo.equalsIgnoreCase("json")){
-//			G.GetOleada();
-//			return "{Oleada:Id}";
-//		}
-//		else{
-//			return "Tipo no soportado";
-//		}
 		CreadorM A = new CreadorM();
 		return A.convierteM(G.PrimeraGeneracion());
 	}
