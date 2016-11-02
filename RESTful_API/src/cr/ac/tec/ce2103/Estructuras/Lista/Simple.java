@@ -139,7 +139,7 @@ public class Simple<T> implements GenLista<T> {
 		GenNodo<T> tmp = _head;
 		String L = "";
 		while (tmp != null){
-			L += " " + tmp.get_Dato();
+			L += " " + tmp.get_Criatura();
 			tmp = tmp.get_Siguiente();
 		}
 		System.out.println(L);

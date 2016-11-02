@@ -49,12 +49,10 @@ public class Genetico {
 				Oleada.Insertar(Criatura,Enemigo, -1);
 				Inicial--;
 			}
-//			else{
-//				XML.WriteXML(Oleada);
-//				return Oleada;
-//			}
 		}
+		Oleada.Imprimir();
 		XML.WriteXML(Oleada);
+		System.out.println("Deberia estar creado");
 		return Oleada;
 	}
 	

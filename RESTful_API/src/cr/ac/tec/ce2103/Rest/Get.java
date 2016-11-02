@@ -25,18 +25,7 @@ public class Get {
 	public String Primera(@PathParam("type") String tipo){
 
 		if(tipo.equalsIgnoreCase("texto")){
-			
-			GenLista<int[]> L = new Simple<>();
-			L = G.PrimeraGeneracion();
-			System.out.println("\n"+ "Primera Oleada" + " ");
-			for(int i = 0; i < L.tamaño(); i++){
-				System.out.print("\nCriatura " + Integer.toString(i)+ ": " + L.RetornarNodo(i).get_Criatura() + " ");
-				for(int j = 0; j < 6; j++){
-					int[] a = L.Retornar(i);
-					System.out.print(a[j] + " ");
-				}
-			}
-
+			G.PrimeraGeneracion();
 			return "Creada";
 		}
 		else if(tipo.equalsIgnoreCase("xml")){
