@@ -16,15 +16,14 @@ import javax.swing.JOptionPane;
 
 public class LectorArchivoXML {
 
-    private int count = 0;
     GenLista <String[]> ListaOleada = new Simple<>();
     
     @SuppressWarnings({ "unused", "rawtypes" })
 	public GenLista<String[]> ReadXML(int oleadaI, int oleadaF){
         
-    	while(count <= oleadaF){
+    	while(oleadaI <= oleadaF){
     		
-    		String _Pruta = "oleada"+count+".xml";
+    		String _Pruta = "Oleada"+oleadaI+".xml";
     		File xmlFile = new java.io.File(_Pruta);
     		SAXBuilder builder = new SAXBuilder();
         
@@ -70,8 +69,8 @@ public class LectorArchivoXML {
                            
     					}
     					
-    				System.out.println("Termina Oleada"+count);
-    				count++;
+    				System.out.println("Termina Oleada"+oleadaI);
+    				oleadaI++;
                 
     			}else {
     				JOptionPane.showMessageDialog(null,"Error al leer XML");
