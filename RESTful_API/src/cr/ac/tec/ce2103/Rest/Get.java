@@ -5,6 +5,7 @@ import javax.ws.rs.core.MediaType;
 
 import cr.ac.tec.ce2103.Estructuras.Estructura.GenLista;
 import cr.ac.tec.ce2103.Estructuras.Lista.Simple;
+import cr.ac.tec.ce2103.Estructuras.Matriz.CreadorM;
 import cr.ac.tec.ce2103.Genetico.Genetico;
 
 @Path("/GET")
@@ -24,20 +25,24 @@ public class Get {
 		"application/json"})
 	public String Primera(@PathParam("type") String tipo){
 
-		if(tipo.equalsIgnoreCase("texto")){
-			G.PrimeraGeneracion();
-			return "Creada";
-		}
-		else if(tipo.equalsIgnoreCase("xml")){
-			return "<Oleada>Id</Oleada>";
-		}
-		else if(tipo.equalsIgnoreCase("json")){
-			G.GetOleada();
-			return "{Oleada:Id}";
-		}
-		else{
-			return "Tipo no soportado";
-		}
+//		if(tipo.equalsIgnoreCase("texto")){
+//			G.PrimeraGeneracion();
+//			return "Creada";
+//
+//		}
+//		else if(tipo.equalsIgnoreCase("xml")){
+//			String[][] a = {{"a","b"}};
+//			return a;
+//		}
+//		else if(tipo.equalsIgnoreCase("json")){
+//			G.GetOleada();
+//			return "{Oleada:Id}";
+//		}
+//		else{
+//			return "Tipo no soportado";
+//		}
+		CreadorM A = new CreadorM();
+		return A.convierteM(G.PrimeraGeneracion());
 	}
 	
 	@Path("/GenOleada/{type}")

@@ -6,7 +6,7 @@ public class CreadorM {
 	
 	String[][] MatrizEnemigos;
 	
-	public String[][] convierteM(GenLista<int[]> lista){
+	public String convierteM(GenLista<int[]> lista){
 		
 		MatrizEnemigos = new String [lista.tamaño()][lista.RetornarNodo(0).get_Atrib().length];
 		System.out.println(lista.tamaño()+"filas");
@@ -19,8 +19,8 @@ public class CreadorM {
 				MatrizEnemigos[i][j]= Dato;
 			}
 		}
-		ImprimeMatriz();
-		return MatrizEnemigos;
+//		ImprimeMatriz();
+		return ImprimeMatriz();
 	}
 	
 	private String ImprimeMatriz(){
@@ -28,7 +28,7 @@ public class CreadorM {
 		for (int i=0; i<MatrizEnemigos.length;i++){
 				
 				A = A + "["+MatrizEnemigos[i][0]+"]"+"["+MatrizEnemigos[i][1]+"]"+"["+MatrizEnemigos[i][2]+"]"+
-						"["+MatrizEnemigos[i][3]+"]"+"["+MatrizEnemigos[i][4]+"]"+"["+MatrizEnemigos[i][5]+"]";
+						"["+MatrizEnemigos[i][3]+"]"+"["+MatrizEnemigos[i][4]+"]"+"["+MatrizEnemigos[i][5]+"]" + "/";
 		}
 		return A;
 	}
