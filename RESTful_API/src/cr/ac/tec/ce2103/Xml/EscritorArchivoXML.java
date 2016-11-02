@@ -18,9 +18,10 @@ public class EscritorArchivoXML {
 	private int count = 0;
 	
     
-		public StreamResult WriteXML(GenLista<int[]> Lista){
+		public StreamResult WriteXML(GenLista<int[]> lista){
 			int contador =0;
-			GenLista<int[]> lista = Lista;
+			System.out.println("Llego XML");
+			lista.Imprimir();
         
         try{
             
@@ -36,17 +37,19 @@ public class EscritorArchivoXML {
             
             
             while(contador<lista.tamaño()){
-            
+            	System.out.println("Lo esta haciendo");
                 Element datos = doc.createElement("datos");
                 rootElement.appendChild(datos);
                     
                     int[] arregloDatos =  (int[]) (lista.RetornarNodo(contador).get_Atrib());
                     
                     Element nodo0 = doc.createElement("TipoEnemigo");
+                    System.out.println(lista.RetornarNodo(contador).get_Criatura());
                     nodo0.appendChild(doc.createTextNode(lista.RetornarNodo(contador).get_Criatura()));
                     datos.appendChild(nodo0);
                     
                     Element nodo1 = doc.createElement("TipoEnemigo_ID");
+                    System.out.println(Integer.toString(arregloDatos[0]));
                     nodo1.appendChild(doc.createTextNode(Integer.toString(arregloDatos[0])));
                     datos.appendChild(nodo1);
                     
@@ -77,8 +80,10 @@ public class EscritorArchivoXML {
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
             StreamResult result = new StreamResult("Oleada"+ count + ".xml");
+            System.out.println("Llego a esta pussy linea");
             count++;
             transformer.transform(source, result);
+            System.out.println("Llego a esta otra pussy linea");
             
             
         }catch(ParserConfigurationException pce){

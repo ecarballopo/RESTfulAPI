@@ -10,7 +10,7 @@ public class Genetico {
 		
 	private GenLista<int[]> Oleada = new Simple<>();
 	private GenLista<int[]> Copia;
-	private int Inicial = 3;
+	private int Inicial = 5;
 	private int Vida = 100;
 	private GenLista<Integer> fitness = new Simple<>();
 	private EscritorArchivoXML XML = new EscritorArchivoXML();
@@ -19,6 +19,15 @@ public class Genetico {
 	private double porcentajeAumentoMut = 1.5;
 	private String[] Criaturas = {"Ogro","Arpia","Elfo","Mercenario"};
 	private Random rnd = new Random();
+	
+	public void GetOleada(){
+		PrimeraGeneracion();
+		int cont = 0;
+		while(cont < 4){
+			GenOleada();
+			cont++;
+		}
+	}
 	
 	public GenLista<int[]> PrimeraGeneracion(){
 		while(Inicial > 0){
@@ -39,13 +48,11 @@ public class Genetico {
 				int[] Enemigo = {4,Vida,RandomAtrib(1,1),RandomAtrib(10,15),RandomAtrib(2,5),RandomAtrib(10,15)};
 				Oleada.Insertar(Criatura,Enemigo, -1);
 				Inicial--;
-			}else{
-				Copia = Oleada;
-//				XML.WriteXML(Copia);
-				return Oleada;
 			}
 		}
-//		XML.WriteXML(Oleada);
+		Oleada.Imprimir();
+		XML.WriteXML(Oleada);
+		System.out.println("Deberia estar creado");
 		return Oleada;
 	}
 	
@@ -55,11 +62,11 @@ public class Genetico {
 			System.out.println("MUTACIÓN "+porcentaje);
 			Cross();
 			Mutation();
+			XML.WriteXML(Oleada);
 		}else{
 			Cross();
+			XML.WriteXML(Oleada);
 		}
-		Copia = Oleada;
-//		XML.WriteXML(Copia);
 		return Oleada;
 	}
 	
@@ -73,8 +80,8 @@ public class Genetico {
 			fitness.Insertar(fit, -1);
 			fit = 0;
 		}
-		
-		int[] PosFit = mejores(fitness,(int) (fitness.tamaño()*porcentajefit));
+		int tamaño = (int) (fitness.tamaño()*porcentajefit);
+		int[] PosFit = mejores(tamaño);
 		
 		int cont2 = 0;
 		System.out.println("\nPosiciones Mejores Fitness" + " ");
@@ -136,15 +143,15 @@ public class Genetico {
 		return Criaturas[rnd.nextInt(4)];
 	}
 	
-	private int[] mejores(GenLista<Integer> fitness, int tamaño){
+	private int[] mejores(int tamaño){
 		int[] maximos = new int[tamaño];
 		for(int i = 0; i < tamaño ; i++){
-			maximos[i] = max();
+			maximos[i] = posmax();
 		}
 		return maximos;
 	}
 	
-	private int max(){
+	private int posmax(){
 		int max = 0;
 		int posMax = 0;
         for (int i = 0; i < fitness.tamaño(); i++) {
@@ -155,6 +162,16 @@ public class Genetico {
         posMax = fitness.RetornarPos(max);
         fitness.RetornarNodo(posMax).set_Dato(0);
 		return posMax;
+	}
+	
+	private int max(){
+		int max = 0;
+        for (int i = 0; i < fitness.tamaño(); i++) {
+            if (fitness.RetornarNodo(i).get_Dato() > max) {
+                max = fitness.RetornarNodo(i).get_Dato();
+            }
+        }
+		return max;
 	}
 	
 }
