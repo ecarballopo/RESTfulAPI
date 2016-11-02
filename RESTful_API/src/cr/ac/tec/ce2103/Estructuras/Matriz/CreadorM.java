@@ -21,7 +21,6 @@ public class CreadorM {
 		}
 		ImprimeMatriz();
 		return MatrizEnemigos;
-		
 	}
 	
 	private void ImprimeMatriz(){
