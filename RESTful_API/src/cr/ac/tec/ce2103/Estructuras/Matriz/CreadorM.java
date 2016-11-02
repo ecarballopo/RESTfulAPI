@@ -9,9 +9,6 @@ public class CreadorM {
 	public String convierteM(GenLista<int[]> lista){
 		
 		MatrizEnemigos = new String [lista.tamaño()][lista.RetornarNodo(0).get_Atrib().length];
-		System.out.println(lista.tamaño()+"filas");
-		System.out.println(lista.RetornarNodo(0).get_Atrib().length+"columnas");
-		System.out.println((lista.RetornarNodo(0).get_Atrib())[0]);
 		for (int i=0; i<lista.tamaño();i++){
 			for (int j=0; j<lista.RetornarNodo(0).get_Atrib().length;j++){
 				int dato = (lista.RetornarNodo(i).get_Atrib())[j];
