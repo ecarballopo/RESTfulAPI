@@ -4,17 +4,19 @@ import cr.ac.tec.ce2103.Estructuras.Estructura.GenLista;
 
 public class CreadorM {
 	
-	int[][] MatrizEnemigos;
+	String[][] MatrizEnemigos;
 	
-	public int[][] convierteM(GenLista<int[]> lista){
+	public String[][] convierteM(GenLista<int[]> lista){
 		
-		MatrizEnemigos = new int [lista.tamaño()][lista.RetornarNodo(0).get_Atrib().length];
+		MatrizEnemigos = new String [lista.tamaño()][lista.RetornarNodo(0).get_Atrib().length];
 		System.out.println(lista.tamaño()+"filas");
 		System.out.println(lista.RetornarNodo(0).get_Atrib().length+"columnas");
 		System.out.println((lista.RetornarNodo(0).get_Atrib())[0]);
 		for (int i=0; i<lista.tamaño();i++){
 			for (int j=0; j<lista.RetornarNodo(0).get_Atrib().length;j++){
-				MatrizEnemigos[i][j]= (lista.RetornarNodo(i).get_Atrib())[j];
+				int dato = (lista.RetornarNodo(i).get_Atrib())[j];
+				String Dato = Integer.toString(dato);
+				MatrizEnemigos[i][j]= Dato;
 			}
 		}
 		ImprimeMatriz();
