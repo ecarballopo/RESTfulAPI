@@ -26,22 +26,9 @@ public class CreadorM {
 	
 	private void ImprimeMatriz(){
 		for (int i=0; i<MatrizEnemigos.length;i++){
-			//for (int j=0; j<(MatrizEnemigos[0].length);j++){
 				
 				System.out.println("["+MatrizEnemigos[i][0]+"]"+"["+MatrizEnemigos[i][1]+"]"+"["+MatrizEnemigos[i][2]+"]"+
 						"["+MatrizEnemigos[i][3]+"]"+"["+MatrizEnemigos[i][4]+"]"+"["+MatrizEnemigos[i][5]+"]");
-		
-			//}
-
-
 		}
 	}
 }
-
-
-/*
-Ogro 1
-elfo 2
-arpia 3
-mercenario 4
-*/
