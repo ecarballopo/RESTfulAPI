@@ -9,7 +9,6 @@ import cr.ac.tec.ce2103.Xml.EscritorArchivoXML;
 public class Genetico {
 		
 	private GenLista<int[]> Oleada = new Simple<>();
-	private GenLista<int[]> Copia;
 	private int Inicial = 5;
 	private int Vida = 100;
 	private GenLista<Integer> fitness = new Simple<>();
@@ -164,14 +163,14 @@ public class Genetico {
 		return posMax;
 	}
 	
-	private int max(){
-		int max = 0;
-        for (int i = 0; i < fitness.tamaño(); i++) {
-            if (fitness.RetornarNodo(i).get_Dato() > max) {
-                max = fitness.RetornarNodo(i).get_Dato();
-            }
-        }
-		return max;
-	}
+//	private int max(){
+//		int max = 0;
+//        for (int i = 0; i < fitness.tamaño(); i++) {
+//            if (fitness.RetornarNodo(i).get_Dato() > max) {
+//                max = fitness.RetornarNodo(i).get_Dato();
+//            }
+//        }
+//		return max;
+//	}
 	
 }

@@ -16,14 +16,14 @@ import javax.swing.JOptionPane;
 
 public class LectorArchivoXML {
 
-    GenLista <String[]> ListaOleada = new Simple<>();
+    GenLista <int[]> ListaOleada = new Simple<>();
     
     @SuppressWarnings({ "unused", "rawtypes" })
-	public GenLista<String[]> ReadXML(int oleadaI, int oleadaF){
+	public GenLista<int[]> ReadXML(int oleadaI, int oleadaF){
         
     	while(oleadaI <= oleadaF){
     		
-    		String _Pruta = "Oleada"+oleadaI+".xml";
+    		String _Pruta = "E:/Proyectos_JavaEE/Repositorios/REST/RESTful_API/Oleada"+oleadaI+".xml";
     		File xmlFile = new java.io.File(_Pruta);
     		SAXBuilder builder = new SAXBuilder();
         
@@ -48,28 +48,17 @@ public class LectorArchivoXML {
     						String ResA = campo.getChildText("ResA");
                         
     						
-    						String[] DatoOleada = new String[6];
-    						DatoOleada[0]= TipoEnemigo_ID;
-    						DatoOleada[1]= Vida;
-    						DatoOleada[2]= Velocidad;
-    						DatoOleada[3]= ResF;
-    						DatoOleada[4]= ResM;
-    						DatoOleada[5]= ResA;
-    						ListaOleada.Insertar(TipoEnemigo,DatoOleada,0);
-    						/*System.out.println(DatoOleada);
-    						System.out.println(DatoOleada[0]);
-    						System.out.println(DatoOleada[1]);
-    						System.out.println(DatoOleada[2]);
-    						System.out.println(DatoOleada[3]);
-    						System.out.println(DatoOleada[4]);
-    						System.out.println(DatoOleada[5]);
-    						System.out.println(count);
-    						System.out.println("     ");*/
-                            	
-                           
+    						int[] DatoOleada = new int[6];
+    						DatoOleada[0]= Integer.parseInt(TipoEnemigo_ID);
+    						DatoOleada[1]= Integer.parseInt(Vida);
+    						DatoOleada[2]= Integer.parseInt(Velocidad);
+    						DatoOleada[3]= Integer.parseInt(ResF);
+    						DatoOleada[4]= Integer.parseInt(ResM);
+    						DatoOleada[5]= Integer.parseInt(ResA);
+    						ListaOleada.Insertar(TipoEnemigo,DatoOleada,-1);                           
     					}
     					
-    				System.out.println("Termina Oleada"+oleadaI);
+    				System.out.println("Termina Oleada: "+oleadaI);
     				oleadaI++;
                 
     			}else {

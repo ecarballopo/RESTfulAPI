@@ -5,10 +5,14 @@ import cr.ac.tec.ce2103.Estructuras.Estructura.GenLista;
 public class CreadorM {
 	
 	String[][] MatrizEnemigos;
+	int fila = 0;
+	int columna = 0;
 	
 	public String convierteM(GenLista<int[]> lista){
 		
-		MatrizEnemigos = new String [lista.tamaño()][lista.RetornarNodo(0).get_Atrib().length];
+		fila = lista.tamaño();
+		columna = lista.RetornarNodo(0).get_Atrib().length;
+		MatrizEnemigos = new String [fila][columna];
 		for (int i=0; i<lista.tamaño();i++){
 			for (int j=0; j<lista.RetornarNodo(0).get_Atrib().length;j++){
 				int dato = (lista.RetornarNodo(i).get_Atrib())[j];
@@ -17,7 +21,7 @@ public class CreadorM {
 			}
 		}
 //		ImprimeMatriz();
-		return ImprimeMatriz();
+		return Integer.toString(fila) + "/" +ImprimeMatriz();
 	}
 	
 	private String ImprimeMatriz(){

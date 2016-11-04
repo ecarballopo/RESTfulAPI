@@ -79,11 +79,12 @@ public class EscritorArchivoXML {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult("Oleada"+ count + ".xml");
-            System.out.println("Llego a esta pussy linea");
+            StreamResult result = new StreamResult("E:/Proyectos_JavaEE/Repositorios/REST/RESTful_API/Oleada"+ count + ".xml");
+            System.out.println("Llego a esta linea");
             count++;
-            transformer.transform(source, result);
-            System.out.println("Llego a esta otra pussy linea");
+//            xmlOutput.output(doc, new FileWriter("E:/Proyectos_JavaEE/Repositorios/REST/RESTful_API/"+result));
+            transformer.transform(source,result);
+            System.out.println("Llego a esta otra linea");
             
             
         }catch(ParserConfigurationException pce){
