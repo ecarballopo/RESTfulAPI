@@ -12,7 +12,6 @@ public class Genetico {
 	private int Inicial = 5;
 	private int Vida = 100;
 	private GenLista<Integer> fitness = new Simple<>();
-	private GenLista<Integer> fit_Oleada = new Simple<>();
 	private EscritorArchivoXML XML = new EscritorArchivoXML();
 	private double porcentajefit = 0.2;
 	private double porcentajeMut = 0.08;
@@ -22,12 +21,10 @@ public class Genetico {
 	
 	public void GetOleada(){
 		PrimeraGeneracion();
-		int cont = 0;
-		fit_Oleada.Imprimir();
-//		System.out.println(fit_Oleada.RetornarNodo(0).get_Dato());
-		while(cont < 4){
+		System.out.println("Inicial "+fit());
+		while(fit() < 300){
+			System.out.println("While "+fit());
 			GenOleada();
-			cont++;
 		}
 	}
 	
@@ -60,7 +57,7 @@ public class Genetico {
 		double porcentaje = RandomAtrib(0,20)/100.000;
 		if(porcentaje < porcentajeMut){
 			System.out.println("MUTACIÓN "+porcentaje);
-			Cross();
+//			Cross();
 			Mutation();
 			XML.WriteXML(Oleada);
 		}else{
@@ -73,12 +70,11 @@ public class Genetico {
 	public int[] fitness() {
 		int fit = 0;
 		for(int i = 0; i < Oleada.tamaño(); i++){
-			for(int j = 1; j < 6; j++){
+			for(int j = 3; j < 6; j++){
 				int[] a = Oleada.Retornar(i);
 				fit += a[j];
 			}
 			fitness.Insertar(fit, -1);
-			fit_Oleada.Insertar(fit, -1);
 			fit = 0;
 		}
 		int tamaño = (int) (fitness.tamaño()*porcentajefit);
@@ -101,12 +97,17 @@ public class Genetico {
 		for(int i = 0; i < PosMejores.length; i++){
 			for(int j = 0; j < Combinar; j++){
 				int[] Atrib = new int[6];
-				if(j%2 == 0){
+				if(Primo(j)){
 					for(int k = 0; k < 6; k++){
 						if(k < 3){
 							Atrib[k] = Oleada.RetornarNodo(j).get_Atrib()[k];
 						}else{
-							Atrib[k] = Oleada.RetornarNodo(PosMejores[i]).get_Atrib()[k];
+							if(Atrib[k] < 100){
+								Atrib[k] = Oleada.RetornarNodo(PosMejores[i]).get_Atrib()[k] + 15;
+							}else{
+								Atrib[k] = Oleada.RetornarNodo(PosMejores[i]).get_Atrib()[k];
+							}
+							
 						}
 					}
 					if(Atrib[0] == 1){
@@ -127,8 +128,15 @@ public class Genetico {
 		for(int i = 0; i < Oleada.tamaño(); i++){
 			if(i%2 != 0){
 				int[] nAtrib = Oleada.RetornarNodo(i).get_Atrib();
-				for(int j = 2; j < nAtrib.length; j++){
-					nAtrib[j] = (int) (nAtrib[j]*porcentajeAumentoMut);
+				for(int j = 3; j < nAtrib.length; j++){
+					if (nAtrib[j] < 100){
+						double mut = RandomAtrib(0,100)/100.000;
+						if(mut < 0.05){
+							nAtrib[j] = nAtrib[j] + (100 - nAtrib[j]);
+						}else{
+							nAtrib[j] = (int) (nAtrib[j]*porcentajeAumentoMut);
+						}
+					}
 				}
 				Oleada.RetornarNodo(i).set_Atrib(nAtrib);
 			}
@@ -165,14 +173,38 @@ public class Genetico {
 		return posMax;
 	}
 	
-//	private int max(GenLista<int[]> Oleada){
-//		int max = 0;
-//        for (int i = 0; i < fitness.tamaño(); i++) {
-//            if (fitness.RetornarNodo(i).get_Dato() > max) {
-//                max = fitness.RetornarNodo(i).get_Dato();
-//            }
-//        }
-//		return max;
-//	}
+	private int fit() {
+		int fit = 0;
+		for(int i = 0; i < Oleada.tamaño(); i++){
+			for(int j = 3; j < 6; j++){
+				int[] a = Oleada.Retornar(i);
+				fit += a[j];
+			}
+			fitness.Insertar(fit, -1);
+			fit = 0;
+		}
+		int max = 0;
+        for (int i = 0; i < fitness.tamaño(); i++) {
+            if (fitness.RetornarNodo(i).get_Dato() > max) {
+                max = fitness.RetornarNodo(i).get_Dato();
+            }
+        }
+		fitness.Eliminar();
+		return max;
+	}
+	
+	private boolean Primo(int num){
+		int a = 0;
+		for(int i = 1; i < (num+1); i++){
+			if(num % i == 0){
+				a++;
+				}
+			}
+	         if(a!=2){
+	              return false;
+	         }else{
+	        	 return true;
+	         }
+	}
 	
 }
