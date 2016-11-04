@@ -12,6 +12,7 @@ public class Genetico {
 	private int Inicial = 5;
 	private int Vida = 100;
 	private GenLista<Integer> fitness = new Simple<>();
+	private GenLista<Integer> fit_Oleada = new Simple<>();
 	private EscritorArchivoXML XML = new EscritorArchivoXML();
 	private double porcentajefit = 0.2;
 	private double porcentajeMut = 0.08;
@@ -22,6 +23,8 @@ public class Genetico {
 	public void GetOleada(){
 		PrimeraGeneracion();
 		int cont = 0;
+		fit_Oleada.Imprimir();
+//		System.out.println(fit_Oleada.RetornarNodo(0).get_Dato());
 		while(cont < 4){
 			GenOleada();
 			cont++;
@@ -49,9 +52,7 @@ public class Genetico {
 				Inicial--;
 			}
 		}
-		Oleada.Imprimir();
 		XML.WriteXML(Oleada);
-		System.out.println("Deberia estar creado");
 		return Oleada;
 	}
 	
@@ -77,6 +78,7 @@ public class Genetico {
 				fit += a[j];
 			}
 			fitness.Insertar(fit, -1);
+			fit_Oleada.Insertar(fit, -1);
 			fit = 0;
 		}
 		int tamaño = (int) (fitness.tamaño()*porcentajefit);
@@ -163,7 +165,7 @@ public class Genetico {
 		return posMax;
 	}
 	
-//	private int max(){
+//	private int max(GenLista<int[]> Oleada){
 //		int max = 0;
 //        for (int i = 0; i < fitness.tamaño(); i++) {
 //            if (fitness.RetornarNodo(i).get_Dato() > max) {

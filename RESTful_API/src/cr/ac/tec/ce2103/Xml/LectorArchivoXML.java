@@ -23,7 +23,7 @@ public class LectorArchivoXML {
         
     	while(oleadaI <= oleadaF){
     		
-    		String _Pruta = "E:/Proyectos_JavaEE/Repositorios/REST/RESTful_API/Oleada"+oleadaI+".xml";
+    		String _Pruta = "E:/Proyectos_JavaEE/Repositorios/REST/RESTful_API/Oleadas/Oleada"+oleadaI+".xml";
     		File xmlFile = new java.io.File(_Pruta);
     		SAXBuilder builder = new SAXBuilder();
         

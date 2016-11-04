@@ -20,8 +20,6 @@ public class EscritorArchivoXML {
     
 		public StreamResult WriteXML(GenLista<int[]> lista){
 			int contador =0;
-			System.out.println("Llego XML");
-			lista.Imprimir();
         
         try{
             
@@ -37,19 +35,16 @@ public class EscritorArchivoXML {
             
             
             while(contador<lista.tamaño()){
-            	System.out.println("Lo esta haciendo");
                 Element datos = doc.createElement("datos");
                 rootElement.appendChild(datos);
                     
                     int[] arregloDatos =  (int[]) (lista.RetornarNodo(contador).get_Atrib());
                     
                     Element nodo0 = doc.createElement("TipoEnemigo");
-                    System.out.println(lista.RetornarNodo(contador).get_Criatura());
                     nodo0.appendChild(doc.createTextNode(lista.RetornarNodo(contador).get_Criatura()));
                     datos.appendChild(nodo0);
                     
                     Element nodo1 = doc.createElement("TipoEnemigo_ID");
-                    System.out.println(Integer.toString(arregloDatos[0]));
                     nodo1.appendChild(doc.createTextNode(Integer.toString(arregloDatos[0])));
                     datos.appendChild(nodo1);
                     
@@ -79,12 +74,9 @@ public class EscritorArchivoXML {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult("E:/Proyectos_JavaEE/Repositorios/REST/RESTful_API/Oleada"+ count + ".xml");
-            System.out.println("Llego a esta linea");
+            StreamResult result = new StreamResult("E:/Proyectos_JavaEE/Repositorios/REST/RESTful_API/Oleadas/Oleada"+ count + ".xml");
             count++;
-//            xmlOutput.output(doc, new FileWriter("E:/Proyectos_JavaEE/Repositorios/REST/RESTful_API/"+result));
             transformer.transform(source,result);
-            System.out.println("Llego a esta otra linea");
             
             
         }catch(ParserConfigurationException pce){
